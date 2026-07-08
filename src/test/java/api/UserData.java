@@ -8,12 +8,14 @@ public class UserData {
     private String country;
     private String city_with_type;
     private String timezone;
+    private String city;
 
-    public UserData(String postal_code, String country, String city_with_type, String timezone) {
+    public UserData(String postal_code, String country, String city_with_type, String timezone, String city) {
         this.postal_code = postal_code;
         this.country = country;
         this.city_with_type = city_with_type;
         this.timezone = timezone;
+        this.city = city;
     }
 
     public String getPostal_code() {
@@ -30,6 +32,10 @@ public class UserData {
 
     public String getTimezone() {
         return timezone;
+    }
+
+    public String getCity() {
+        return city;
     }
 
     public UserData(){
