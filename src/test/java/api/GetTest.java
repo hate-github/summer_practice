@@ -15,13 +15,13 @@ public class GetTest {
 
     @Test //Тест для проверки, что город не разный в City_with_type и City
     public void testIPLocate(){
-
+        Specifications.installSpecification(Specifications.requestSpecification(SUGGESTION_URL), Specifications.responseSpecification200());
         UserData userData = given()
                 .header("Authorization", "Token " + TOKEN)
                 .queryParam("ip", temp)
                 .when()
-                .contentType(ContentType.JSON)
-                .get(SUGGESTION_URL+ENDPOINT_IPLOCATE_ADDRESS)
+                //.contentType(ContentType.JSON)
+                .get(/*SUGGESTION_URL+*/ENDPOINT_IPLOCATE_ADDRESS)
                 .then().log().all()
                 .extract().body().jsonPath().getObject("location.data", UserData.class);
 
