@@ -7,14 +7,12 @@ public class UserData {
     private String postal_code;
     private String country;
     private String city_with_type;
-    private String timezone;
     private String city;
 
-    public UserData(String postal_code, String country, String city_with_type, String timezone, String city) {
+    public UserData(String postal_code, String country, String city_with_type, String city) {
         this.postal_code = postal_code;
         this.country = country;
         this.city_with_type = city_with_type;
-        this.timezone = timezone;
         this.city = city;
     }
 
@@ -30,9 +28,6 @@ public class UserData {
         return city_with_type;
     }
 
-    public String getTimezone() {
-        return timezone;
-    }
 
     public String getCity() {
         return city;
@@ -54,7 +49,4 @@ public class UserData {
         this.city_with_type = city_with_type;
     }
 
-    public void setTimezone(String timezone) {
-        this.timezone = timezone;
-    }
 }
