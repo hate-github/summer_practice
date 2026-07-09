@@ -15,7 +15,9 @@ public class UserData {
         this.city_with_type = city_with_type;
         this.city = city;
     }
+    public UserData(){
 
+    }
     public String getPostal_code() {
         return postal_code;
     }
@@ -31,10 +33,6 @@ public class UserData {
 
     public String getCity() {
         return city;
-    }
-
-    public UserData(){
-
     }
 
     public void setPostal_code(String postal_code) {

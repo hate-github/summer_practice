@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 public class POSTTest {
 
     private final static String TOKEN= ImportantThings.Token();
-    private final static String SUGGESTION_URL = ImportantThings.SuggestionDADATAUrl();
+    private final static String SUGGESTION_DADATA_URL = ImportantThings.SuggestionDADATAUrl();
     private final static String ENDPOINT_IP_LOCATE_ADDRESS = ImportantThings.POSTEndpointIpLocateAddress();
     private final List<String> addresses = IPList.CreateIPs().getIpList();
     //public String temp="46.226.227.20";
@@ -23,7 +23,7 @@ public class POSTTest {
 
     @Test
     public void testIPLocate(){
-        Specifications.installSpecification(Specifications.requestSpecification(SUGGESTION_URL), Specifications.responseSpecification200());
+        Specifications.installSpecification(Specifications.requestSpecification(SUGGESTION_DADATA_URL), Specifications.responseSpecification200());
         for(String IP : addresses){
             UserData userData = given()
                     .header("Authorization", "Token " + TOKEN)
