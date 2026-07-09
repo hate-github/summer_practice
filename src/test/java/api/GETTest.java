@@ -1,5 +1,6 @@
 package api;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
@@ -42,6 +43,28 @@ public class GETTest {
         System.out.println("    docs :" + dadataStats.getRemaining().getDocs());
         System.out.println("    merging :" + dadataStats.getRemaining().getMerging());
         System.out.println("    suggestions :" + dadataStats.getRemaining().getSuggestions());
+
+        //1 тест
+        Assert.assertNotNull("DADATAStats null!!", dadataStats);
+        Assert.assertNotNull("Дата null!!", dadataStats.getDate());
+        Assert.assertNotNull("Дата пустая!!", dadataStats.getDate().isEmpty());
+        Assert.assertNotNull("Services null!!", dadataStats.getServices());
+        Assert.assertNotNull("Remaining null!!", dadataStats.getRemaining());
+
+        //2 тест
+        Assert.assertTrue("!!!Services Brand = " + dadataStats.getServices().getBrand(), dadataStats.getServices().getBrand() >= 0);
+        Assert.assertTrue("!!!Services Clean = " + dadataStats.getServices().getClean(), dadataStats.getServices().getClean() >= 0);
+        Assert.assertTrue("!!!Services Company = " + dadataStats.getServices().getCompany(), dadataStats.getServices().getCompany() >= 0);
+        Assert.assertTrue("!!!Services Docs = " + dadataStats.getServices().getDocs(), dadataStats.getServices().getDocs() >= 0);
+        Assert.assertTrue("!!!Services Merging = " + dadataStats.getServices().getMerging(), dadataStats.getServices().getMerging() >= 0);
+        Assert.assertTrue("!!!Services Suggestions = " + dadataStats.getServices().getSuggestions(), dadataStats.getServices().getSuggestions() >= 0);
+
+        Assert.assertTrue("!!!Remaining Brand = " + dadataStats.getRemaining().getBrand(), dadataStats.getRemaining().getBrand() >= 0);
+        Assert.assertTrue("!!!Remaining Clean = " + dadataStats.getRemaining().getClean(), dadataStats.getRemaining().getClean() >= 0);
+        Assert.assertTrue("!!!Remaining Company = " + dadataStats.getRemaining().getCompany(), dadataStats.getRemaining().getCompany() >= 0);
+        Assert.assertTrue("!!!Remaining Docs = " + dadataStats.getRemaining().getDocs(), dadataStats.getRemaining().getDocs() >= 0);
+        Assert.assertTrue("!!!Remaining Merging = " + dadataStats.getRemaining().getMerging(), dadataStats.getRemaining().getMerging() >= 0);
+        Assert.assertTrue("!!!Remaining Suggestions = " + dadataStats.getRemaining().getSuggestions(), dadataStats.getRemaining().getSuggestions() >= 0);
     }
 
 }
