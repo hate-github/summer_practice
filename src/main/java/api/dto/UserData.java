@@ -17,7 +17,7 @@ public class UserData {
         this.postal_code = postal_code;
         this.country = country;
         this.city_with_type = city_with_type;
-        this.city_with_type = city;
+        this.city = city;
     }
 
     public String getPostal_code() {
