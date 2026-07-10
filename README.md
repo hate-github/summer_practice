@@ -9,3 +9,7 @@
 DADATA_TOKEN=---
 
 DADATA_SECRET_KEY=---
+
+Для запуска тестов:
+
+mvn clean test - запуск всех тестов
