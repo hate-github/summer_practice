@@ -1,11 +1,16 @@
-package api;
+package api.utils;
 
-import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import io.restassured.specification.Argument;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import org.hamcrest.Matcher;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class Specifications {
     public static RequestSpecification requestSpecification(String url){
@@ -18,9 +23,6 @@ public class Specifications {
         return new ResponseSpecBuilder()
                 .expectStatusCode(200)
                 .build();
-    }
-    public static void installSpecification(RequestSpecification request, ResponseSpecification response){
-        RestAssured.requestSpecification = request;
-        RestAssured.responseSpecification = response;
+
     }
 }

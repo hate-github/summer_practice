@@ -1,11 +1,10 @@
-package api;
+package api.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DADATAStats {
-
     @JsonProperty("date")
     private String date;
     @JsonProperty("services")
@@ -28,32 +27,28 @@ public class DADATAStats {
         @JsonProperty("suggestions")
         private Integer suggestions;
 
-        public Services(){
-
-        }
-
-        public Integer getSuggestions() {
-            return suggestions;
-        }
-
-        public Integer getMerging() {
-            return merging;
-        }
-
-        public Integer getDocs() {
-            return docs;
-        }
-
-        public Integer getCompany() {
-            return company;
+        public Integer getBrand() {
+            return brand;
         }
 
         public Integer getClean() {
             return clean;
         }
 
-        public Integer getBrand() {
-            return brand;
+        public Integer getCompany() {
+            return company;
+        }
+
+        public Integer getDocs() {
+            return docs;
+        }
+
+        public Integer getMerging() {
+            return merging;
+        }
+
+        public Integer getSuggestions() {
+            return suggestions;
         }
 
         public void setBrand(Integer brand) {
@@ -94,10 +89,6 @@ public class DADATAStats {
         private Integer merging;
         @JsonProperty("suggestions")
         private Integer suggestions;
-
-        public Remaining(){
-
-        }
 
         public Integer getBrand() {
             return brand;
