@@ -24,8 +24,6 @@ import java.util.Properties;
 import java.util.stream.Stream;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.anyOf;
-import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.*;
 
 @Execution(ExecutionMode.CONCURRENT)
@@ -284,7 +282,7 @@ public class APITest {
                 .get(ENDPOINT_SUGGEST_ADDRESS)
                 .then()
                 .log().ifValidationFails()
-                .spec(Specifications.responseSpecification200or400());
+                .spec(Specifications.responseSpecification200());
     }
 
     @ParameterizedTest(name = "Поиск адреса")
@@ -300,7 +298,7 @@ public class APITest {
                 .get(ENDPOINT_SUGGEST_ADDRESS)
                 .then()
                 .log().ifValidationFails()
-                .spec(Specifications.responseSpecification200or400());
+                .spec(Specifications.responseSpecification200());
     }
 
     @Test

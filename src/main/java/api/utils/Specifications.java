@@ -8,8 +8,6 @@ import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
 
-import static org.hamcrest.Matchers.anyOf;
-import static org.hamcrest.Matchers.is;
 
 public class Specifications {
     public static RequestSpecification requestSpecification(String url){
@@ -36,9 +34,4 @@ public class Specifications {
                 .build();
     }
 
-    public static ResponseSpecification responseSpecification200or400() {
-        return new ResponseSpecBuilder()
-                .expectStatusCode(anyOf(is(200), is(400)))
-                .build();
-    }
 }
